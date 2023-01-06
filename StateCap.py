@@ -98,8 +98,9 @@ def get_state(capital):
 def two_states_same_capital():
     capital= input("enter a capital city or country: ")
     mycapital= list(capital)
-    mycapital[0]= mycapital[0].upper()
-    capital= ''.join(mycapital)
+    if mycapital[0].islower():	
+    	mycapital[0]= mycapital[0].upper()
+    	capital= ''.join(mycapital)
     keys= []
     for key, value in STATES_CAPITALS.items():
         if value == capital:
@@ -121,14 +122,16 @@ states_capitals_string()
 
 capital= input("enter a state: ")
 mycapital= list(capital)
-mycapital[0]= mycapital[0].upper()
-capital= ''.join(mycapital)
+if mycapital[0].islower():
+	mycapital[0]= mycapital[0].upper()
+	capital= ''.join(mycapital)
 get_state(capital)
 
 capital= input("enter a capital city: ")
 mycapital= list(capital)
-mycapital[0]= mycapital[0].upper()
-capital= ''.join(mycapital)
+if mycapital[0].islower():
+	mycapital[0]= mycapital[0].upper()
+	capital= ''.join(mycapital)
 get_state(capital)
 
 two_states_same_capital()
